@@ -17,15 +17,16 @@ body {
   font-family: 'Zen Kaku Gothic New', sans-serif;
   color: #333333;
   display: flex;
-  flex-direction: column; /* 上から header -> main -> footer の順に並べる */
+  flex-direction: column;
   min-height: 100vh;
+  margin: 0;
   
-  /* 画面全体に背景画像を固定 */
+  /* --- 背景画像を画面全体に広げる設定 --- */
   background-image: url('hobbies.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-size: cover;       /* 縦横比を維持したまま縦横いっぱいに拡大 */
+  background-position: center;  /* 画像の中央を基準に配置 */
+  background-repeat: no-repeat; /* 繰り返さずに1枚だけ表示 */
+  background-attachment: fixed; /* スクロールしても背景を固定（画面全体に追従） */
 }
 
 /* 不要な隙間対策 */
@@ -71,7 +72,7 @@ nav a {
 }
 
 .home {
-  border: 1px solid #000000;
+  border: none; /* 枠線を消去 */
   padding: 0 20px;
   background-color: #ffffff;
 }
@@ -133,6 +134,9 @@ footer p {
 
 /* --- スマホ対応（767px以下） --- */
 @media (max-width: 767px) {
+  body {
+    background-attachment: scroll; /* スマホではスクロール追従にする */
+  }
   main {
     margin: 10px auto;
   }
