@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+.profile-link {
+  border: none; /* 枠線を消す */
+  outline: none; /* クリック時・フォーカス時の枠線を消す */
+  box-shadow: none; /* 影による枠表現がある場合消す */
+}
+
 /* --- 全体の基本設定 & 背景画像 --- */
 html, body {
   height: 100%;/* 画面の高さを100%にする */
